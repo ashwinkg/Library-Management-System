@@ -1,0 +1,32 @@
+create table book_tbl(
+bookid number(10) primary key,
+title varchar(10),
+author varchar(10),
+cost number(10),
+availability number(10)
+);
+
+create table reader_tbl(
+readerid number(10) primary key,
+reader_name varchar(100),
+contact number(10),
+email varchar(100)
+);
+
+create table reader_book_tbl(
+bookid number(10) references book_tbl(bookid) ,
+readerid number(10) references reader_tbl(readerid)
+);
+
+delete from reader_book_tbl;
+update BOOK_TBL set availability=1;
+
+
+select * from book_tbl;
+select * from reader_book_tbl;
+
+insert into book_tbl values(5,'XxX','Sourav','200','1');
+
+insert into reader_tbl values(3,'Ashok',444,'ashok@gmail.com');
+
+
